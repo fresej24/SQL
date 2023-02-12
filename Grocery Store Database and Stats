@@ -1,0 +1,27 @@
+-Create a grocery store database.
+CREATE TABLE store (id INTEGER PRIMARY KEY, product TEXT, location TEXT, price INTEGER, popularity INTEGER);
+
+INSERT into store values (1, "bananas", "produce", 1.49, 9.5);
+INSERT into store values (2, "ribeye", "meat", 14.99, 7.8);
+INSERT into store values (3, "sourdough", "bakery", 4.89, 6.5);
+INSERT into store values (4, "butter", "dairy", 4.99, 7.2);
+INSERT into store values (5, "avocado", "produce", 0.89, 8.2);
+INSERT into store values (6, "rice", "bulk", 2.69, 4.9);
+INSERT into store values (7, "parmesan", "dairy", 2.29, 6.4);
+INSERT into store values (8, "protein powder", "health", 27.99, 7.8);
+INSERT into store values (9, "magnesium", "health", 23.60, 4.4);
+INSERT into store values (10, "mixed berries", "frozen", 2.99, 5.1);
+INSERT into store values (11, "potatoes", "produce", 3.59, 3.8);
+INSERT into store values (12, "french bread", "bakery", 3.29, 4.9);
+INSERT into store values (13, "chicken breast", "meat", 8.39, 8.4);
+INSERT into store values (14, "hoagie buns", "bakery", 4.29, 6.0);
+INSERT into store values (15, "pepper jack", "dairy", 3.49, 8.4);
+
+-Display the database ordered by price.
+SELECT * FROM store ORDER BY price desc;
+
+-What is the average price of items in the bakery section?
+SELECT avg(price) "avg bakery product price" FROM store WHERE location='bakery';
+
+-What are the 10 most popular items?
+SELECT product, price, popularity FROM store ORDER BY popularity desc limit 10;
